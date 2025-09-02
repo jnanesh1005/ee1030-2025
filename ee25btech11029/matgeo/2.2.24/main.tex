@@ -65,6 +65,10 @@
 
 
 \begin{document}
+\setlength{\abovedisplayskip}{0pt}
+\setlength{\belowdisplayskip}{0pt}
+\setlength{\abovedisplayshortskip}{0pt}
+\setlength{\belowdisplayshortskip}{0pt}
 \bibliographystyle{IEEEtran}
 \onecolumn
 
@@ -89,32 +93,49 @@ For the points $\vec{ABCD}$ to represent a square:
 \end{align}
 Find the sides
 \begin{align}
-\vec{AB}=\vec{B}-\vec{A}=\myvec{3\\-5} \  \vec{BC}=\vec{C}-\vec{B}=\myvec{-5\\-3} \\
-\vec{CD}=\vec{D}-\vec{C}=\myvec{-3\\5} \ 
-\vec{DA}=\vec{A}-\vec{D}=\myvec{5\\3}
+\vec{B}-\vec{A}=\myvec{3\\-5} \  \vec{C}-\vec{B}=\myvec{-5\\-3} \\
+\vec{D}-\vec{C}=\myvec{-3\\5} \ 
+\vec{A}-\vec{D}=\myvec{5\\3}
 \end{align}
-Check side lengths
+Put these as columns of a $2\times4$ matrix V:
 \begin{align}
-    \norm{AB}=\sqrt{\vec{AB}^T\vec{AB}}=\sqrt{3^2+\brak{-5}^2}=\sqrt{34}\\
-    \norm{BC}=\sqrt{\vec{BC}^T\vec{BC}}=\sqrt{\brak{-5}^2+\brak{-3}^2}=\sqrt{34}\\
-    \norm{CD}=\sqrt{\vec{CD}^T\vec{CD}}=\sqrt{\brak{-3}^2+5^2}=\sqrt{34}\\
-    \norm{DA}=\sqrt{\vec{DA}^T\vec{DA}}=\sqrt{5^2+3^2}=\sqrt{34}
+    \vec{V}=\myvec{B-A&C-B&D-C&A-B}\\
+    =\myvec{3 & -5 & -3 & 5\\-5 & -3 & 5 & 3}
 \end{align}
-Therefore all the sides are of equal length
-\begin{align}
-    \norm{AB}=\norm{BC}=\norm{CD}=\norm{DA}
-\end{align}
-Condition for right angle:
-For two sides to be angled at $90\degree{}$ the Dot product between the 2 side vectors should be 0
-\begin{align}
-    \vec{AB^TBC}=\brak{3}\brak{5}+\brak{-5}\brak{-3}=-15+15=0
-\end{align}
-Therefore the sides are perpendicular to each other.
+Compute the $4\times4$Gram matrix $\vec{G}=\vec{V^TV}$.Its entries are all possible inner products\\
+Self inner-products \brak{\text{diagonal of G}}:
 
-Since all the sides are equal and one the angles is 90\degree{} , all the points represent a square.
+\begin{align}
+    {\brak{\vec{A-B}}^T\brak{\vec{A-B}}}={3^2+\brak{-5}^2}={34}\\
+    {\brak{\vec{B-C}}^T\brak{\vec{B-C}}}={\brak{-5}^2+\brak{-3}^2}={34}\\
+    {\brak{\vec{C-D}}^T\brak{\vec{C-D}}}=\brak{-3}^2+5^2={34}\\
+    \brak{\vec{D-A}}^T\brak{\vec{D-A}}=5^2+3^2=34
+\end{align}
+
+Adjacent inner products\brak{\text{off-diagonals for consecutive sides}}:
+\begin{align}
+\brak{\vec{B-A}^T}\brak{\vec{C-B}} = 3\brak{-5} + \brak{-5}\brak{-3} = -15 + 15 = 0\\
+\brak{\vec{C-B}^T} \brak{\vec{D-C}} = \brak{-5}\brak{-3} + \brak{-3}(5) = 15 - 15 = 0,\\
+\brak{\vec{D-C}^T} \brak{\vec{A-D}} = \brak{-3}(5) + 5(3) = -15 + 15 = 0,\\
+\brak{\vec{A-D}^T} \brak{\vec{B-A}} = 5(3) + 3\brak{-5} = 15 - 15 = 0.
+\end{align}
+
+So the relevant part of the Gram matrix G 
+\brak{\text{showing these entries}} is:
+\begin{align}
+\vec{G}=\vec{V^TV}=\myvec{34&0&*&0\\0&34&0&*\\ *&0&34&0\\0&*&0&34}
+\end{align}
+Where * are the other inner products \brak{\text{not needed for the argument}}\\
+Interpretation:\\
+1. Every diagonal element which is the self inner product has the same magnitude . It means all sides are of equal length.\\
+2. Each adjacent pair has inner product zero. A zero inner product means the two vectors are perpendicular\\
+Therefore the given 4 points represent a square
+
+
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\columnwidth]{figs/sqaure.png}
+    \includegraphics[width=1\columnwidth]{figs/square.png}
     \caption{Sqaure}
     \label{fig:placeholder_1}
 \end{figure}
