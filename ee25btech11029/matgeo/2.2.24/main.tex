@@ -86,24 +86,44 @@ Given details:
 \begin{align}
     \vec{A}=\myvec{1\\7}  \vec{B}=\myvec{4\\2} \vec{C}=\myvec{-1\\-1} \vec{D}=\myvec{-4\\4}
 \end{align}
-For the points $\vec{ABCD}$ to represent a square:
-\begin{align}
-    \norm{AB}=\norm{BC}=\norm{CD}=\norm{DA}\\
-    \angle{BAD}=\angle{ABC}=\angle{DCA}=\angle{ADC}=90\degree{}
-\end{align}
+
 Find the sides
 \begin{align}
 \vec{B}-\vec{A}=\myvec{3\\-5} \  \vec{C}-\vec{B}=\myvec{-5\\-3} \\
 \vec{D}-\vec{C}=\myvec{-3\\5} \ 
 \vec{A}-\vec{D}=\myvec{5\\3}
 \end{align}
-Put these as columns of a $2\times4$ matrix V:
+First let's check wheter the given opposite sides of the polygon are parallel to each other \\
+For the sides to be parallel 
+\begin{align}
+    \vec{B-A}=\vec{D-C}\\
+    \vec{C-B}=\vec{A-D}\\
+\end{align}
+Since:
+\begin{align}
+    \vec{B-A}=\vec{C-D}=\myvec{3\\-5}\\
+    \vec{C-B}=\vec{D-A}=\myvec{-5\\-3}
+\end{align}
+Therefore the opposite sides are parallel to each other and Thus the given polygon can be classified as a \textbf{Parallelogram}.\\
+Now put these sides as columns of a $2\times4$ matrix V:
 \begin{align}
     \vec{V}=\myvec{B-A&C-B&D-C&A-B}\\
     =\myvec{3 & -5 & -3 & 5\\-5 & -3 & 5 & 3}
 \end{align}
 Compute the $4\times4$Gram matrix $\vec{G}=\vec{V^TV}$.Its entries are all possible inner products\\
-Self inner-products \brak{\text{diagonal of G}}:
+
+
+Adjacent inner products of the Gram matrix would be\brak{\text{off-diagonals for consecutive sides}}:
+\begin{align}
+\brak{\vec{B-A}^T}\brak{\vec{C-B}} = 3\brak{-5} + \brak{-5}\brak{-3} = -15 + 15 = 0\\
+\brak{\vec{C-B}^T} \brak{\vec{D-C}} = \brak{-5}\brak{-3} + \brak{-3}(5) = 15 - 15 = 0,\\
+\brak{\vec{D-C}^T} \brak{\vec{A-D}} = \brak{-3}(5) + 5(3) = -15 + 15 = 0,\\
+\brak{\vec{A-D}^T} \brak{\vec{B-A}} = 5(3) + 3\brak{-5} = 15 - 15 = 0.
+\end{align}
+Since all are zero ,it means all the sides are perpendicular to each other . Therefore the given parallelogram can be classified as a \textbf{Rectangle}.
+
+In the matrix G self inner-products would be 
+\brak{\text{diagonal of G}}:
 
 \begin{align}
     {\brak{\vec{A-B}}^T\brak{\vec{A-B}}}={3^2+\brak{-5}^2}={34}\\
@@ -111,25 +131,7 @@ Self inner-products \brak{\text{diagonal of G}}:
     {\brak{\vec{C-D}}^T\brak{\vec{C-D}}}=\brak{-3}^2+5^2={34}\\
     \brak{\vec{D-A}}^T\brak{\vec{D-A}}=5^2+3^2=34
 \end{align}
-
-Adjacent inner products\brak{\text{off-diagonals for consecutive sides}}:
-\begin{align}
-\brak{\vec{B-A}^T}\brak{\vec{C-B}} = 3\brak{-5} + \brak{-5}\brak{-3} = -15 + 15 = 0\\
-\brak{\vec{C-B}^T} \brak{\vec{D-C}} = \brak{-5}\brak{-3} + \brak{-3}(5) = 15 - 15 = 0,\\
-\brak{\vec{D-C}^T} \brak{\vec{A-D}} = \brak{-3}(5) + 5(3) = -15 + 15 = 0,\\
-\brak{\vec{A-D}^T} \brak{\vec{B-A}} = 5(3) + 3\brak{-5} = 15 - 15 = 0.
-\end{align}
-
-So the relevant part of the Gram matrix G 
-\brak{\text{showing these entries}} is:
-\begin{align}
-\vec{G}=\vec{V^TV}=\myvec{34&0&*&0\\0&34&0&*\\ *&0&34&0\\0&*&0&34}
-\end{align}
-Where * are the other inner products \brak{\text{not needed for the argument}}\\
-Interpretation:\\
-1. Every diagonal element which is the self inner product has the same magnitude . It means all sides are of equal length.\\
-2. Each adjacent pair has inner product zero. A zero inner product means the two vectors are perpendicular\\
-Therefore the given 4 points represent a square
+since all are equal to 34 , it means all the side lengths are equal , therefore the given rectangle can be classified as a \textbf{Square}. 
 
 
 
