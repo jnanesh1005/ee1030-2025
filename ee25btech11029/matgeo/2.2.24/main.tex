@@ -93,7 +93,7 @@ Find the sides
 \vec{D}-\vec{C}=\myvec{-3\\5} \ 
 \vec{A}-\vec{D}=\myvec{5\\3}
 \end{align}
-First let's check wheter the given opposite sides of the polygon are parallel to each other \\
+First let's check wheter the given opposite sides of the quadrilateral are parallel to each other \\
 For the sides to be parallel 
 \begin{align}
     \vec{B-A}=\vec{D-C}\\
@@ -104,36 +104,19 @@ Since:
     \vec{B-A}=\vec{C-D}=\myvec{3\\-5}\\
     \vec{C-B}=\vec{D-A}=\myvec{-5\\-3}
 \end{align}
-Therefore the opposite sides are parallel to each other and Thus the given polygon can be classified as a \textbf{Parallelogram}.\\
-Now put these sides as columns of a $2\times4$ matrix V:
+Therefore the opposite sides are parallel to each other and Thus the given quadrilateral can be classified as a \textbf{Parallelogram}.\\
+Now, checking for right angle, we check for inner product.
 \begin{align}
-    \vec{V}=\myvec{B-A&C-B&D-C&A-B}\\
-    =\myvec{3 & -5 & -3 & 5\\-5 & -3 & 5 & 3}
+ \brak{\vec{B}- \vec{A}}^{\top} \brak{\vec{C}- \vec{B}}=\myvec{3 & -5}\myvec{-5 \\ -3}=0
 \end{align}
-Compute the $4\times4$Gram matrix $\vec{G}=\vec{V^TV}$.Its entries are all possible inner products\\
-
-
-Adjacent inner products of the Gram matrix would be\brak{\text{off-diagonals for consecutive sides}}:
+This implies that the angle at $\vec{B}$ is one right angle. A parallelogram with a right angle is a rectangle.\\
+Checking for a square:\\
+The given quadrilateral is a square if its diagonals are orthogonal,
 \begin{align}
-\brak{\vec{B-A}^T}\brak{\vec{C-B}} = 3\brak{-5} + \brak{-5}\brak{-3} = -15 + 15 = 0\\
-\brak{\vec{C-B}^T} \brak{\vec{D-C}} = \brak{-5}\brak{-3} + \brak{-3}(5) = 15 - 15 = 0,\\
-\brak{\vec{D-C}^T} \brak{\vec{A-D}} = \brak{-3}(5) + 5(3) = -15 + 15 = 0,\\
-\brak{\vec{A-D}^T} \brak{\vec{B-A}} = 5(3) + 3\brak{-5} = 15 - 15 = 0.
+\brak{\vec{C}- \vec{A}}^{\top} \brak{\vec{D}- \vec{B}}=\myvec{-2 & -8}\myvec{-8 \\ 2}=0
 \end{align}
-Since all are zero ,it means all the sides are perpendicular to each other . Therefore the given parallelogram can be classified as a \textbf{Rectangle}.
-
-In the matrix G self inner-products would be 
-\brak{\text{diagonal of G}}:
-
-\begin{align}
-    {\brak{\vec{A-B}}^T\brak{\vec{A-B}}}={3^2+\brak{-5}^2}={34}\\
-    {\brak{\vec{B-C}}^T\brak{\vec{B-C}}}={\brak{-5}^2+\brak{-3}^2}={34}\\
-    {\brak{\vec{C-D}}^T\brak{\vec{C-D}}}=\brak{-3}^2+5^2={34}\\
-    \brak{\vec{D-A}}^T\brak{\vec{D-A}}=5^2+3^2=34
-\end{align}
-since all are equal to 34 , it means all the side lengths are equal , therefore the given rectangle can be classified as a \textbf{Square}. 
-
-
+We can see that $\brak{\vec{C}- \vec{A}}^{\top} \brak{\vec{D}- \vec{B}}$ is equal to $0$, that is, the diagonals are  orthogonal and therefore the quadrilateral $\vec{A}\vec{B}\vec{C}\vec{D}$ is a square.\\
+$\therefore$ The quadrilateral $\vec{A}\vec{B}\vec{C}\vec{D}$ is a Square.
 
 \begin{figure}[H]
     \centering
