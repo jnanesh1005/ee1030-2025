@@ -1,0 +1,18 @@
+\frametitle{Python Code }
+    \begin{lstlisting}
+ax.set_xlabel('$x$')
+ax.set_ylabel('$y$')
+ax.set_zlabel('$z$')
+ax.legend(loc='best')
+ax.grid(True)
+ax.axis('equal')
+fig.savefig('../figs/fig.png')
+print('Saved figure to ../figs/fig.png')
+
+if(y == 'y'):
+    subprocess.run(shlex.split('termux-open ../figs/fig.png'))
+else:
+    subprocess.run(["open",  "../figs/fig.png"])
+
+plt.show()
+\end{lstlisting}
