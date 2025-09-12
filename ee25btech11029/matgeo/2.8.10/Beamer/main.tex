@@ -144,6 +144,51 @@ Therefore $\beta$ is:
     \beta&=\myvec{\frac{3}{2}\\ \frac{-1}{2}\\0}+\myvec{\frac{1}{2}\\ \frac{3}{2}\\-3}
 \end{align}
 \end{frame}
+\begin{frame}{Theoretical Solution}
+Performing QR decomposition on the matrix $\myvec{\alpha&&\beta}$
+\begin{align}
+    \vec{A}=\myvec{\alpha &&\beta}=\myvec{3&& 2\\-1 && 1 \\ 0 && -3}
+\end{align}
+Finding $\vec{q_1}\brak{\text{normalized}\  \alpha}$
+\begin{align}
+    \norm{\alpha}&=\sqrt{\myvec{\alpha}\myvec{\alpha}^T}=\sqrt{9+1}=\sqrt{10}\\
+    \vec{q_1}&=\frac{\vec{\alpha}}{\norm{\vec{\alpha}}}=\myvec{\frac{3}{\sqrt{10}}&&\frac{-1}{\sqrt{10}}&&0}
+\end{align}
+\end{frame}
+\begin{frame}{Theoretical Solution}
+The projection of $\beta$ on $\vec{q_1}$\\
+projection coefficient:
+\begin{align}
+    \vec{r_{12}}=\vec{q_1^T}\vec{\beta}=\frac{3}{\sqrt{10}}.2+\frac{-1}{\sqrt{10}}+0=\frac{5}{\sqrt{10}}
+\end{align}
+projection:
+\begin{align}
+    proj\brak{\vec{\beta}}_{q_1}=\vec{r_{12}}.\vec{q_1}=\frac{5}{\sqrt{10}}.\myvec{\frac{3}{\sqrt{10}}&&\frac{-1}{\sqrt{10}}&&0}=\myvec{1.5 && -0.5 &&-3}
+\end{align}
+\end{frame}
+\begin{frame}{Theoretical Solution}
+subtract projection from $\beta$:
+\begin{align}
+    \vec{u_1}=\beta-proj\brak{\vec{\beta}}_{q_1}=\myvec{0.5&&1.5&&&&-3}
+\end{align}
+we normalize $\vec{u_2}$ to get $\vec{q_2}$\\
+compute $\norm{\vec{u_2}}$
+\begin{align}
+    \norm{u_2}&=\sqrt{\myvec{u_2}\myvec{u_2}^T}=\sqrt{11.5}\\
+    \vec{q_2}&=\frac{\vec{u_2}}{\norm{u_2}}=\myvec{\frac{0.5}{\sqrt{11.5}}&& \frac{1.5}{\sqrt{11.5}}&&\frac{-3}{\sqrt{11.5}}}
+\end{align}
+\end{frame}
+\begin{frame}{Theoretical Solution}
+$\vec{Q}$'s columns are $\vec{q_1}$ and $\vec{q_2}$
+\begin{align}
+    \vec{Q}=\myvec{3 && 0.5 \\ -1 && 1.5 \\ 0 && -3}
+\end{align}
+$\vec{R}$ is:
+\begin{align}
+    \vec{R}=\myvec{\sqrt{10} && \frac{5}{\sqrt{10}}\\0 &&\sqrt{11.5}}
+\end{align}
+\end{frame}
+
 
 \begin{frame}[fragile]
     \frametitle{C Code (1) - Function to store the points }
