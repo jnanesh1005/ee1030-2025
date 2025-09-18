@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.8.30)  18 SEP 2025 11:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.8.30)  18 SEP 2025 19:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1890,7 +1890,7 @@ Overfull \hbox (2.23209pt too wide) has occurred while \output is active
 [4
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}]
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 135--135
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 132--132
  [][]  
  []
 
@@ -1902,14 +1902,14 @@ Overfull \hbox (2.23209pt too wide) has occurred while \output is active
 [5
 
 ]
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 143--143
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 140--140
  [][]  
  []
 
 \openout4 = `main.vrb'.
 
 
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 161--161
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 158--158
  [][]  
  []
 
@@ -1926,14 +1926,14 @@ Overfull \hbox (2.23209pt too wide) has occurred while \output is active
 [6
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rmtt.enc}]
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 163--163
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 160--160
  [][]  
  []
 
 \openout4 = `main.vrb'.
 
 
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 181--181
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 178--178
  [][]  
  []
 
@@ -1945,14 +1945,14 @@ Overfull \hbox (2.23209pt too wide) has occurred while \output is active
 [7
 
 ]
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 183--183
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 180--180
  [][]  
  []
 
 \openout4 = `main.vrb'.
 
 
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 206--206
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 203--203
  [][]  
  []
 
@@ -1964,19 +1964,19 @@ Overfull \hbox (2.23209pt too wide) has occurred while \output is active
 [8
 
 ]
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 210--210
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 207--207
  [][]  
  []
 
 \openout4 = `main.vrb'.
 
 
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 233--233
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 230--230
  [][]  
  []
 
 (./main.vrb)
-Overfull \vbox (13.72923pt too high) detected at line 233
+Overfull \vbox (13.72923pt too high) detected at line 230
  []
 
 
@@ -1987,14 +1987,14 @@ Overfull \hbox (2.23209pt too wide) has occurred while \output is active
 [9
 
 ]
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 236--236
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 233--233
  [][]  
  []
 
 \openout4 = `main.vrb'.
 
 
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 254--254
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 251--251
  [][]  
  []
 
@@ -2006,14 +2006,14 @@ Overfull \hbox (2.23209pt too wide) has occurred while \output is active
 [10
 
 ]
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 256--256
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 253--253
  [][]  
  []
 
 \openout4 = `main.vrb'.
 
 
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 278--278
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 275--275
  [][]  
  []
 
@@ -2023,7 +2023,7 @@ LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line
  (/usr/share/texmf/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ))
-Overfull \vbox (25.72923pt too high) detected at line 278
+Overfull \vbox (25.72923pt too high) detected at line 275
  []
 
 
@@ -2034,14 +2034,14 @@ Overfull \hbox (2.23209pt too wide) has occurred while \output is active
 [11
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}]
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 285--285
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 282--282
  [][]  
  []
 
 <figs/plane.png, id=347, 722.7pt x 578.16pt>
 File: figs/plane.png Graphic file (type png)
 <use figs/plane.png>
-Package pdftex.def Info: figs/plane.png  used on input line 285.
+Package pdftex.def Info: figs/plane.png  used on input line 282.
 (pdftex.def)             Requested size: 260.48056pt x 208.38445pt.
 
 Overfull \hbox (2.23209pt too wide) has occurred while \output is active
@@ -2051,14 +2051,14 @@ Overfull \hbox (2.23209pt too wide) has occurred while \output is active
 [12
 
  <./figs/plane.png>]
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 288--288
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 285--285
  [][]  
  []
 
 \openout4 = `main.vrb'.
 
 
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 308--308
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 305--305
  [][]  
  []
 
@@ -2070,14 +2070,14 @@ Overfull \hbox (2.23209pt too wide) has occurred while \output is active
 [13
 
 ]
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 310--310
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 307--307
  [][]  
  []
 
 \openout4 = `main.vrb'.
 
 
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 324--324
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 321--321
  [][]  
  []
 
@@ -2089,14 +2089,14 @@ Overfull \hbox (2.23209pt too wide) has occurred while \output is active
 [14
 
 ]
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 326--326
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 323--323
  [][]  
  []
 
 \openout4 = `main.vrb'.
 
 
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 343--343
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 340--340
  [][]  
  []
 
@@ -2108,14 +2108,14 @@ Overfull \hbox (2.23209pt too wide) has occurred while \output is active
 [15
 
 ]
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 350--350
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 347--347
  [][]  
  []
 
 <figs/plane2.png, id=463, 722.7pt x 578.16pt>
 File: figs/plane2.png Graphic file (type png)
 <use figs/plane2.png>
-Package pdftex.def Info: figs/plane2.png  used on input line 350.
+Package pdftex.def Info: figs/plane2.png  used on input line 347.
 (pdftex.def)             Requested size: 260.48056pt x 208.38445pt.
 
 Overfull \hbox (2.23209pt too wide) has occurred while \output is active
@@ -2165,7 +2165,7 @@ e/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public
 /lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso8.pfb></usr/share/
 texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/
 lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (16 pages, 547705 bytes).
+Output written on main.pdf (16 pages, 546596 bytes).
 PDF statistics:
  559 PDF objects out of 1000 (max. 8388607)
  469 compressed objects within 5 object streams
