@@ -1,0 +1,17 @@
+\frametitle{Python Code}
+    \begin{lstlisting}
+    ax.set_xlabel('X-axis')
+    ax.set_ylabel('Y-axis')
+    ax.set_zlabel('Z-axis')
+    ax.set_title('Plane Passing Through Three Points')
+    ax.legend()
+    ax.set_xlim([-1, 4])
+    ax.set_ylim([-1, 4])
+    ax.set_zlim([-1, 6])
+    plt.savefig("./figs/plane2.png")
+    plt.show()
+    subprocess.run(shlex.split('termux-open ../figs/parallelogram.png'))
+
+if __name__ == '__main__':
+    plot_plane_from_points()
+\end{lstlisting}
