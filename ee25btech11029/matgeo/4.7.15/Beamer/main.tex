@@ -1,0 +1,344 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{txfonts}
+\usepackage{tkz-euclide}
+\usepackage{listings}
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{gvv}
+\usepackage{lmodern}
+\usepackage{circuitikz}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{multicol}
+
+\setbeamertemplate{page number in head/foot}[totalframenumber]
+
+\usepackage{tcolorbox}
+\tcbuselibrary{minted,breakable,xparse,skins}
+
+
+
+\definecolor{bg}{gray}{0.95}
+\DeclareTCBListing{mintedbox}{O{}m!O{}}{%
+  breakable=true,
+  listing engine=minted,
+  listing only,
+  minted language=#2,
+  minted style=default,
+  minted options={%
+    linenos,
+    gobble=0,
+    breaklines=true,
+    breakafter=,,
+    fontsize=\small,
+    numbersep=8pt,
+    #1},
+  boxsep=0pt,
+  left skip=0pt,
+  right skip=0pt,
+  left=25pt,
+  right=0pt,
+  top=3pt,
+  bottom=3pt,
+  arc=5pt,
+  leftrule=0pt,
+  rightrule=0pt,
+  bottomrule=2pt,
+  toprule=2pt,
+  colback=bg,
+  colframe=orange!70,
+  enhanced,
+  overlay={%
+    \begin{tcbclipinterior}
+    \fill[orange!20!white] (frame.south west) rectangle ([xshift=20pt]frame.north west);
+    \end{tcbclipinterior}},
+  #3,
+}
+\lstset{
+    language=C,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    stringstyle=\color{orange},
+    commentstyle=\color{green!60!black},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    breaklines=true,
+    showstringspaces=false,
+}
+%------------------------------------------------------------
+%This block of code defines the information to appear in the
+%Title page
+\title %optional
+{4.7.15}
+\date{September 28,2025}
+
+
+\author 
+{Jnanesh Sathisha karmar - EE25BTECH11029}
+
+
+
+\begin{document}
+
+
+
+\frame{\titlepage}
+\begin{frame}{Question}Find the vector equation of the plane which is at a distance of $\frac{6}{\sqrt{29}}$from the origin and its normal vector from the origin is $2\hat{i}-3\hat{j}+4\hat{k}$..
+
+
+\end{frame}
+
+
+
+\begin{frame}{Equation}
+Given details
+\begin{align}
+   \text{distance of plane from the origin}=d=\frac{6}{\sqrt
+   {29}}\\
+   \text{normal vector}=\vec{n}=\myvec{2\\-3\\4}
+\end{align}
+\end{frame}
+\begin{frame}{Theoretical Solution}
+
+Generally a plane can be represented as:
+\begin{align}
+    \vec{\hat{n}}^{\top}\brak{\vec{r}-\vec{r_o}}=0
+\end{align}
+For our convience we can choose $\vec{r_o}$ to be the point closest to origin.Therefore:
+\begin{align}
+   \vec{r_o}=d\vec{\hat{n}}
+\end{align}
+
+\end{frame}
+
+\begin{frame}{Theoretical Solution}
+Substituting this in the plane equation:
+\begin{align}
+    \vec{\hat{n}}^{\top}\brak{\vec{r}-d\vec{\hat{n}}}=0\\
+    \brak{\vec{\hat{n}}^{\top}\vec{r}}-\brak{d\vec{\hat{n}}^{\top}\vec{\hat{n}}}=0\\
+    \because\ \vec{\hat{n}}^{\top}\vec{\hat{n}}=1\\
+    \vec{\hat{n}}^{\top}\vec{r}=d
+\end{align}
+Substituting it in the plane equation:
+\begin{align}
+    \frac{1}{\sqrt{29}}\myvec{2 & -3 & 4}^{\top}\vec{r}=\frac{6}{\sqrt{29}}
+\end{align}
+The final plane equation is:
+\begin{align}
+    \myvec{2 & -3 & 4}^{\top}\vec{r}=6
+\end{align}
+
+\end{frame}
+
+
+
+
+
+
+\begin{frame}[fragile]
+    \frametitle{C Code (1) - Function to store the points }
+
+    \begin{lstlisting}
+
+#include <stdlib.h>
+
+
+float* generate_plane_points(float x_min, float x_max, float y_min, float y_max, int num_steps) {
+    if (num_steps <= 1) { 
+        return NULL;
+    }
+
+    int total_points = num_steps * num_steps;
+    float* points = (float*)malloc(total_points * 3 * sizeof(float));
+    if (points == NULL) {
+        return NULL; 
+    }
+    \end{lstlisting}
+\end{frame}
+\begin{frame}[fragile]
+    \frametitle{C Code (1) - Function to store the points }
+
+    \begin{lstlisting}
+    float x_step_size = (x_max - x_min) / (num_steps - 1);
+    float y_step_size = (y_max - y_min) / (num_steps - 1);
+
+    int index = 0;
+   
+    for (int i = 0; i < num_steps; i++) {
+        float x = x_min + i * x_step_size;
+        
+        for (int j = 0; j < num_steps; j++) {
+            float y = y_min + j * y_step_size;
+
+          
+            float z = (3.0f/2.0f) - (1.0f/2.0f) * x + (3.0f / 4.0f) * y;
+
+    \end{lstlisting}
+\end{frame}
+\begin{frame}[fragile]
+    \frametitle{C Code (1) - Function to store the points }
+
+    \begin{lstlisting}
+            points[index++] = x;
+            points[index++] = y;
+            points[index++] = z;
+        }
+    }
+
+    return points;
+}
+
+
+void free_points(float* points) {
+    if (points != NULL) {
+        free(points);
+    }
+}
+
+
+
+
+    \end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Python Code - Using Shared Object}
+    \begin{lstlisting}
+import ctypes
+import numpy as np
+import matplotlib.pyplot as plt
+
+lib = ctypes.CDLL("./plane.so")
+
+lib.generate_plane_points.argtypes = [
+    ctypes.c_float, ctypes.c_float,
+    ctypes.c_float, ctypes.c_float,
+    ctypes.c_int
+]
+lib.generate_plane_points.restype = ctypes.POINTER(ctypes.c_float)
+
+lib.free_points.argtypes = [ctypes.POINTER(ctypes.c_float)]
+lib.free_points.restype = None
+NUM_STEPS = 50  
+total_points = NUM_STEPS * NUM_STEPS
+points_ptr = None
+
+
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Python Code - Using Shared Object}
+    \begin{lstlisting}
+try: 
+    points_ptr = lib.generate_plane_points(-1.0, 3.0,-1.0, 4.0,NUM_STEPS)
+    if not points_ptr:
+        raise MemoryError("C function failed to allocate memory.")
+   
+    points_np = np.ctypeslib.as_array(points_ptr, shape=(total_points, 3))
+    points_data = np.copy(points_np)
+finally:
+    if points_ptr:
+        lib.free_points(points_ptr)
+X = points_data[:, 0].reshape(NUM_STEPS, NUM_STEPS)
+Y = points_data[:, 1].reshape(NUM_STEPS, NUM_STEPS)
+Z = points_data[:, 2].reshape(NUM_STEPS, NUM_STEPS)
+
+
+\end{lstlisting}
+\end{frame}
+\begin{frame}[fragile]
+    \frametitle{Python Code - Using Shared Object}
+    \begin{lstlisting}
+
+fig = plt.figure(figsize=(10, 8))
+ax = fig.add_subplot(projection='3d')
+
+
+ax.plot_surface(X, Y, Z, cmap='plasma', alpha=0.8)
+ax.set_xlabel('X-axis')
+ax.set_ylabel('Y-axis')
+ax.set_zlabel('Z-axis')
+ax.set_title('Simplified Plane Generation')
+ax.legend()
+plt.savefig("./figs/plane.png")
+subprocess.run(shlex.split('termux-open ../figs/parallelogram.png'))
+plt.show()
+
+\end{lstlisting}
+\end{frame}
+
+
+
+\begin{frame}{Plot-Using Both C and Python}
+    \centering
+    \includegraphics[width=\columnwidth, height=0.8\textheight, keepaspectratio]{figs/plane.png}     
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Python Code}
+    \begin{lstlisting}
+import numpy as np
+import matplotlib.pyplot as plt
+
+def plot_plane_from_points():
+    x_range = np.linspace(-1, 4, 20)
+    y_range = np.linspace(-1, 4, 20)
+    X, Y = np.meshgrid(x_range, y_range)
+
+    Z = (3/2) - (1/2) * X + (3 / 4) * Y
+
+    fig = plt.figure(figsize=(10, 8))
+    ax = fig.add_subplot(projection='3d')
+
+\end{lstlisting}
+\end{frame}
+\begin{frame}[fragile]
+    \frametitle{Python Code}
+    \begin{lstlisting}
+    ax.plot_surface(X, Y, Z, alpha=0.7, cmap='plasma', edgecolor='none')
+
+    ax.scatter(p1[0], p1[1], p1[2], color='red', s=120, label='(2,0,0)', depthshade=False)
+    ax.scatter(p2[0], p2[1], p2[2], color='red', s=120, label='(0,3,0)', depthshade=False)
+    ax.scatter(p3[0], p3[1], p3[2], color='red', s=120, label='(0,0,4)', depthshade=False)
+
+
+
+\end{lstlisting}
+\end{frame}
+\begin{frame}[fragile]
+    \frametitle{Python Code}
+    \begin{lstlisting}
+    ax.set_xlabel('X-axis')
+    ax.set_ylabel('Y-axis')
+    ax.set_zlabel('Z-axis')
+    ax.set_title('Plane Passing Through Three Points')
+    ax.legend()
+    ax.set_xlim([-1, 4])
+    ax.set_ylim([-1, 4])
+    ax.set_zlim([-1, 6])
+    plt.savefig("./figs/plane2.png")
+    plt.show()
+    subprocess.run(shlex.split('termux-open ../figs/parallelogram.png'))
+
+if __name__ == '__main__':
+    plot_plane_from_points()
+\end{lstlisting}
+\end{frame}
+
+
+
+\begin{frame}{Plot-Using only Python}
+    \centering
+    \includegraphics[width=\columnwidth, height=0.8\textheight, keepaspectratio]{figs/plane2.png}     
+\end{frame}
+
+
+\end{document}
