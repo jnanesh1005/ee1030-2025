@@ -1,0 +1,20 @@
+\frametitle{Python Code}
+    \begin{lstlisting}
+print("Plotting the planes...")
+fig = plt.figure(figsize=(12, 10))
+ax = fig.add_subplot(projection='3d')
+
+ax.plot_surface(X1, Y1, Z1, cmap='viridis', alpha=0.7)
+ax.plot_surface(X2, Y2, Z2, cmap='plasma', alpha=0.7)
+ax.plot_surface(X3, Y3, Z3, cmap='inferno', alpha=0.7)
+ax.plot_surface(X4, Y4, Z4, cmap='magma', alpha=0.7)
+
+ax.set_xlabel('X-axis')
+ax.set_ylabel('Y-axis')
+ax.set_zlabel('Z-axis')
+ax.set_title('Planes')
+plt.savefig("./figs/planes2.png")
+subprocess.run(shlex.split('termux-open ../figs/planes2.png'))
+plt.show()
+
+\end{lstlisting}
