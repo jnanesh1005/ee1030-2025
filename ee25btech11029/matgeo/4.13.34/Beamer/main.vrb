@@ -1,0 +1,15 @@
+\frametitle{Python Code}
+    \begin{lstlisting}
+    x_min, x_max = min(x1, x2), max(x1, x2)
+    y_min, y_max = min(y1, y2), max(y1, y2)
+    vertices = {'A':(x_min, y_min), 'B':(x_max, y_min), 'C':(x_max, y_max), 'D':(x_min, y_max)}
+    for name, (px, py) in vertices.items():
+        ax.plot(px, py, 'ko')
+        ax.text(px + 0.1, py + 0.1, f'{name}({px:.1f},{py:.1f})')
+    plt.savefig("./figs/diagonals2.png")
+    plt.show()
+
+if __name__ == "__main__":
+    main()
+
+\end{lstlisting}
