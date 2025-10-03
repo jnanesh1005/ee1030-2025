@@ -137,46 +137,47 @@ Through the intersection of these 4 lines we can find the 4 vertices of the para
 \end{frame}
 
 \begin{frame}{Theoretical Solution}
-The equations of the diagonals can be found using the matrix method. The equation of a line through $\brak{x_1, y_1}$ and $\brak{x_2, y_2}$ is given by setting the determinant of the matrix of coordinates to zero, as three collinear points form a triangle with zero area.
-\begin{align*}
-    \det \myvec{ x & y & 1 \\ x_1 & y_1 & 1 \\ x_2 & y_2 & 1 } = 0
-\end{align*}
-    
+The equations of the diagonals can be found using the vector equation of a line, which is given by $\vec{r}(t) = \vec{p_0} + t\vec{d}$, where $\vec{p_0}$ is a starting point and $\vec{d}$ is the direction vector.\\
+
+The equation of the diagonal $\vec{AC}$, passing through $\vec{A}\brak{2, 1}$ and $\vec{C}\brak{3, 5}$, is:
+\begin{align}
+    \text{The starting point vector is } \vec{p_0} &= \vec{A} = \myvec{2\\1} \\
+    \text{The direction vector is } \vec{d} &= \vec{C} - \vec{A} = \myvec{3\\5} - \myvec{2\\1} = \myvec{1\\4} \\
+    \text{The vector equation is } \myvec{x\\y} &= \myvec{2\\1} + t\myvec{1\\4} \\
+\end{align}
 \end{frame}
 \begin{frame}{Theoretical Solution}
-The equation of the diagonal $\vec{AC}$, passing through $\vec{A}\brak{2, 1}$ and $\vec{C}$$\brak{3, 5}$, is:
 \begin{align}
-    \det \myvec{ x & y & 1 \\ 2 & 1 & 1 \\ 3 & 5 & 1 } &= 0 \\
-    x\brak{1 \cdot 1 - 5 \cdot 1} - y\brak{2 \cdot 1 - 3 \cdot 1} + 1\brak{2 \cdot 5 - 3 \cdot 1} &= 0 \\
-    x\brak{1 - 5} - y\brak{2 - 3} + 1\brak{10 - 3} &= 0 \\
-    -4x - y\brak{-1} + 7 &= 0 \\
-    -4x + y + 7 &= 0 \\
+ \text{From this, we get } x = 2 + t &\implies t = x-2 \\
+    \text{And } y = 1 + 4t \\
+    \text{Substituting for t: } y &= 1 + 4\brak{x-2} \\
+    y &= 1 + 4x - 8 \\
     y &= 4x - 7
 \end{align}
+The equation of the diagonal $\vec{BD}$, passing through $\vec{B}\brak{3, 1}$ and $\vec{D}\brak{2, 5}$, is:
+\begin{align}
+    \text{The starting point vector is } \vec{p_0} &= \vec{B} = \myvec{3\\1} \\
+    \text{The direction vector is } \vec{d} &= \vec{D} - \vec{B} = \myvec{2\\5} - \myvec{3\\1} = \myvec{-1\\4} \\
+    
+\end{align}
 \end{frame}
 \begin{frame}{Theoretical Solution}
-The equation of the diagonal $\vec{BD}$, passing through $\vec{B}$$\brak{3, 1}$ and $\vec{D}$$\brak{2, 5}$, is:
 \begin{align}
-    \det \myvec{ x & y & 1 \\ 3 & 1 & 1 \\ 2 & 5 & 1 } &= 0 \\
-    x\brak{1 \cdot 1 - 5 \cdot 1} - y\brak{3 \cdot 1 - 2 \cdot 1} + 1\brak{3 \cdot 5 - 2 \cdot 1} &= 0 \\
-    x\brak{1 - 5} - y\brak{3 - 2} + 1\brak{15 - 2} &= 0 \\
-    -4x - y\brak{1} + 13 &= 0 \\
-    -4x - y + 13 &= 0 \\
+    \text{The vector equation is } \myvec{x\\y} &= \myvec{3\\1} + t\myvec{-1\\4} \\
+    \text{From this, we get } x = 3 - t &\implies t = 3-x \\
+    \text{And } y = 1 + 4t \\
+    \text{Substituting for t: } y &= 1 + 4\brak{3-x} \\
+    y &= 1 + 12 - 4x \\
+    4x + y &= 13\\
+\end{align}
+    Therefore the equations of both the diagonals are:
+    \begin{align}
+    y &= 4x - 7 \\
     4x + y &= 13
-\end{align}
+    \end{align}
+    Hence the answer is option 2.
+
 \end{frame}
-\begin{frame}{Theoretical Solution}
-Therefore the equations of both the diagonals are:
-\begin{align}
-    y=4x-7\\4x+y=13
-\end{align}
-Hence the answer is option 2
-\end{frame}
-
-
-
-
-
 \begin{frame}[fragile]
     \frametitle{C Code (1) - Function to store the points }
 

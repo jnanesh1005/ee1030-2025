@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.10.1)  1 OCT 2025 16:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.10.1)  3 OCT 2025 17:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1910,7 +1910,7 @@ Overfull \hbox (2.23209pt too wide) has occurred while \output is active
 [5
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 145--145
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 148--148
  [][]  
  []
 
@@ -1922,10 +1922,77 @@ Overfull \hbox (2.23209pt too wide) has occurred while \output is active
 [6
 
 ]
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 156--156
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 163--163
  [][]  
  []
 
+Runaway argument?
+ \text {The starting point vector is } \vec {p_0} &= \vec {B} = \myvec \ETC.
+! Paragraph ended before \align was complete.
+<to be read again> 
+                   \par 
+l.163 \end{frame}
+                 
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.163 \end{frame}
+                 
+? 
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.163 \end{frame}
+                 
+? 
+! Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.163 \end{frame}
+                 
+? 
+! Misplaced \cr.
+\math@cr@@@ ->\cr 
+                  
+l.163 \end{frame}
+                 
+? 
+! Misplaced \noalign.
+\math@cr@@ ... \iffalse }\fi \math@cr@@@ \noalign 
+                                                  {\vskip #1\relax }
+l.163 \end{frame}
+                 
+? 
+! Misplaced \noalign.
+\black@ #1->\noalign 
+                     {\ifdim #1>\displaywidth \dimen@ \prevdepth \nointerlin...
+l.163 \end{frame}
+                 
+? 
+
+Overfull \hbox (203.23372pt too wide) detected at line 163
+[]
+ []
+
+! Extra }, or forgotten \endgroup.
+\endalign ->\math@cr \black@ \totwidth@ \egroup 
+                                                \ifingather@ \restorealignst...
+l.163 \end{frame}
+                 
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.163 \end{frame}
+                 
+? 
+! Display math should end with $$.
+<to be read again> 
+                   \endgroup 
+l.163 \end{frame}
+                 
+? 
 
 Overfull \hbox (2.23209pt too wide) has occurred while \output is active
  [][]  
@@ -1934,7 +2001,7 @@ Overfull \hbox (2.23209pt too wide) has occurred while \output is active
 [7
 
 ]
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 167--167
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 180--180
  [][]  
  []
 
@@ -1946,26 +2013,14 @@ Overfull \hbox (2.23209pt too wide) has occurred while \output is active
 [8
 
 ]
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 174--174
- [][]  
- []
-
-
-Overfull \hbox (2.23209pt too wide) has occurred while \output is active
- [][]  
- []
-
-[9
-
-]
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 181--181
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 182--182
  [][]  
  []
 
 \openout4 = `main.vrb'.
 
 
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 202--202
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 203--203
  [][]  
  []
 
@@ -1979,17 +2034,17 @@ Overfull \hbox (2.23209pt too wide) has occurred while \output is active
  [][]  
  []
 
-[10
+[9
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rmtt.enc}]
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 205--205
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 206--206
  [][]  
  []
 
 \openout4 = `main.vrb'.
 
 
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 226--226
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 227--227
  [][]  
  []
 
@@ -1999,7 +2054,7 @@ LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line
  (/usr/share/texmf/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ))
-Overfull \vbox (25.72923pt too high) detected at line 226
+Overfull \vbox (25.72923pt too high) detected at line 227
  []
 
 
@@ -2007,17 +2062,36 @@ Overfull \hbox (2.23209pt too wide) has occurred while \output is active
  [][]  
  []
 
-[11
+[10
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}]
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 229--229
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 230--230
  [][]  
  []
 
 \openout4 = `main.vrb'.
 
 
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 246--246
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 247--247
+ [][]  
+ []
+
+(./main.vrb)
+Overfull \hbox (2.23209pt too wide) has occurred while \output is active
+ [][]  
+ []
+
+[11
+
+]
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 249--249
+ [][]  
+ []
+
+\openout4 = `main.vrb'.
+
+
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 263--263
  [][]  
  []
 
@@ -2029,18 +2103,22 @@ Overfull \hbox (2.23209pt too wide) has occurred while \output is active
 [12
 
 ]
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 248--248
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 265--265
  [][]  
  []
 
 \openout4 = `main.vrb'.
 
 
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 262--262
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 284--284
  [][]  
  []
 
 (./main.vrb)
+Overfull \vbox (13.72923pt too high) detected at line 284
+ []
+
+
 Overfull \hbox (2.23209pt too wide) has occurred while \output is active
  [][]  
  []
@@ -2048,22 +2126,18 @@ Overfull \hbox (2.23209pt too wide) has occurred while \output is active
 [13
 
 ]
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 264--264
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 286--286
  [][]  
  []
 
 \openout4 = `main.vrb'.
 
 
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 283--283
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 302--302
  [][]  
  []
 
 (./main.vrb)
-Overfull \vbox (13.72923pt too high) detected at line 283
- []
-
-
 Overfull \hbox (2.23209pt too wide) has occurred while \output is active
  [][]  
  []
@@ -2071,14 +2145,14 @@ Overfull \hbox (2.23209pt too wide) has occurred while \output is active
 [14
 
 ]
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 285--285
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 304--304
  [][]  
  []
 
 \openout4 = `main.vrb'.
 
 
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 301--301
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 320--320
  [][]  
  []
 
@@ -2090,14 +2164,31 @@ Overfull \hbox (2.23209pt too wide) has occurred while \output is active
 [15
 
 ]
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 303--303
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 325--325
+ [][]  
+ []
+
+<figs/diagonals.png, id=457, 578.16pt x 578.16pt>
+File: figs/diagonals.png Graphic file (type png)
+<use figs/diagonals.png>
+Package pdftex.def Info: figs/diagonals.png  used on input line 325.
+(pdftex.def)             Requested size: 208.38445pt x 208.38445pt.
+
+Overfull \hbox (2.23209pt too wide) has occurred while \output is active
+ [][]  
+ []
+
+[16
+
+ <./figs/diagonals.png>]
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 328--328
  [][]  
  []
 
 \openout4 = `main.vrb'.
 
 
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 319--319
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 347--347
  [][]  
  []
 
@@ -2106,34 +2197,17 @@ Overfull \hbox (2.23209pt too wide) has occurred while \output is active
  [][]  
  []
 
-[16
-
-]
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 324--324
- [][]  
- []
-
-<figs/diagonals.png, id=485, 578.16pt x 578.16pt>
-File: figs/diagonals.png Graphic file (type png)
-<use figs/diagonals.png>
-Package pdftex.def Info: figs/diagonals.png  used on input line 324.
-(pdftex.def)             Requested size: 208.38445pt x 208.38445pt.
-
-Overfull \hbox (2.23209pt too wide) has occurred while \output is active
- [][]  
- []
-
 [17
 
- <./figs/diagonals.png>]
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 327--327
+]
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 349--349
  [][]  
  []
 
 \openout4 = `main.vrb'.
 
 
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 346--346
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 366--366
  [][]  
  []
 
@@ -2145,14 +2219,14 @@ Overfull \hbox (2.23209pt too wide) has occurred while \output is active
 [18
 
 ]
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 348--348
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 368--368
  [][]  
  []
 
 \openout4 = `main.vrb'.
 
 
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 365--365
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 383--383
  [][]  
  []
 
@@ -2164,14 +2238,14 @@ Overfull \hbox (2.23209pt too wide) has occurred while \output is active
 [19
 
 ]
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 367--367
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 385--385
  [][]  
  []
 
 \openout4 = `main.vrb'.
 
 
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 382--382
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 401--401
  [][]  
  []
 
@@ -2183,14 +2257,14 @@ Overfull \hbox (2.23209pt too wide) has occurred while \output is active
 [20
 
 ]
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 384--384
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 403--403
  [][]  
  []
 
 \openout4 = `main.vrb'.
 
 
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 400--400
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 416--416
  [][]  
  []
 
@@ -2202,14 +2276,14 @@ Overfull \hbox (2.23209pt too wide) has occurred while \output is active
 [21
 
 ]
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 402--402
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 418--418
  [][]  
  []
 
 \openout4 = `main.vrb'.
 
 
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 415--415
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 433--433
  [][]  
  []
 
@@ -2221,40 +2295,21 @@ Overfull \hbox (2.23209pt too wide) has occurred while \output is active
 [22
 
 ]
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 417--417
+Overfull \hbox (2.23209pt too wide) in paragraph at lines 439--439
  [][]  
  []
 
-\openout4 = `main.vrb'.
-
-
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 432--432
- [][]  
- []
-
-(./main.vrb)
-Overfull \hbox (2.23209pt too wide) has occurred while \output is active
- [][]  
- []
-
-[23
-
-]
-Overfull \hbox (2.23209pt too wide) in paragraph at lines 438--438
- [][]  
- []
-
-<figs/diagonals2.png, id=685, 578.16pt x 578.16pt>
+<figs/diagonals2.png, id=658, 578.16pt x 578.16pt>
 File: figs/diagonals2.png Graphic file (type png)
 <use figs/diagonals2.png>
-Package pdftex.def Info: figs/diagonals2.png  used on input line 438.
+Package pdftex.def Info: figs/diagonals2.png  used on input line 439.
 (pdftex.def)             Requested size: 208.38445pt x 208.38445pt.
 
 Overfull \hbox (2.23209pt too wide) has occurred while \output is active
  [][]  
  []
 
-[24
+[23
 
  <./figs/diagonals2.png>]
 \tf@nav=\write8
@@ -2282,10 +2337,10 @@ Package rerunfilecheck Info: Checksums for `main.out':
 (rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 57283 strings out of 474222
- 1361503 string characters out of 5748733
+ 57279 strings out of 474222
+ 1361428 string characters out of 5748733
  2392226 words of memory out of 5000000
- 78487 multiletter control sequences out of 15000+600000
+ 78485 multiletter control sequences out of 15000+600000
  599736 words of font info for 78 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  128i,15n,123p,1172b,1470s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2295,10 +2350,10 @@ sr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/p
 ublic/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/s
 hare/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/publ
 ic/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (24 pages, 273732 bytes).
+Output written on main.pdf (23 pages, 273186 bytes).
 PDF statistics:
- 774 PDF objects out of 1000 (max. 8388607)
- 667 compressed objects within 7 object streams
- 49 named destinations out of 1000 (max. 500000)
+ 746 PDF objects out of 1000 (max. 8388607)
+ 641 compressed objects within 7 object streams
+ 47 named destinations out of 1000 (max. 500000)
  95 words of extra memory for PDF output out of 10000 (max. 10000000)
 
