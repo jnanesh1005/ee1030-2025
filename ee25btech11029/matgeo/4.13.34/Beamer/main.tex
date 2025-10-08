@@ -102,81 +102,86 @@
 
 \end{frame}
 
-
-
-\begin{frame}{Equation}
- Given details\\Equation 1:
+\begin{frame}{Theoretical Solution}
+We can solve this problem by treating a pair of parallel lines as a degenerate conic section and finding where a line (the diagonal) intersects it. The general equation for a conic is given by $g(\vec{x}) = \vec{x}^\intercal \myvec{V} \vec{x} + 2\vec{u}^\intercal \vec{x} + f = 0$, and a parametric line is given by $\vec{x} = \vec{h} + \kappa\vec{m}$. The intersection points are found using the formula:
+\noindent
 \begin{align}
-   x^2-5x+6=0\\
-   \text{This equation can be factored into:}\\
-   \brak{x-2}\brak{x-3}=0\\
-   \text{This gives us two vertical lines:}\\
-   x=2\\
-   x=3
+\kappa_{1,2} = \frac{-\vec{m}^{\top} \brak{\myvec{V}\vec{h} + \vec{u}} \pm \sqrt{\brak{\vec{m}^{\top} \brak{\myvec{V}\vec{h} + \vec{u}}}^2 - \brak{\vec{m}^{\top} \myvec{V} \vec{m}} g(\vec{h})}}{\vec{m}^{\top} \myvec{V} \vec{m}}
 \end{align}
-\end{frame}
-\begin{frame}{Equation}
-Equation 2:
-\begin{align}
-    y^2-6y+5=0\\
-    \text{This equation can be factored into:}\\
-    \brak{y-1}\brak{y-5}=0\\
-    \text{This gives us two horizontal lines:}\\
-    y=1\\
-    y=5
-\end{align}
+
 \end{frame}
 \begin{frame}{Theoretical Solution}
-Through the intersection of these 4 lines we can find the 4 vertices of the parallelogram 
+Let's represent the pair of vertical lines $x^2 - (x_1+x_2)x + x_1x_2 = 0$ as our conic section.
 \begin{align}
-    \text{Intersection of}\  x=2\  \text{and}\  y=1 \text{is the point} \brak{2,1}.\text{Let vector}\ \vec{A}=\myvec{2\\1}\\
-    \text{Intersection of}\  x=3\  \text{and}\  y=1 \text{is the point} \brak{3,1}.\text{Let vector}\ \vec{B}=\myvec{3\\1}\\
-    \text{Intersection of}\  x=3\  \text{and}\  y=5 \text{is the point} \brak{3,5}.\text{Let vector}\ \vec{C}=\myvec{3\\5}\\
-    \text{Intersection of}\  x=2\  \text{and}\  y=5 \text{is the point} \brak{2,5}.\text{Let vector}\ \vec{D}=\myvec{2\\5}\\
+    \vec{V} &= \myvec{1&0\\0&0}, \quad 
+    \vec{u} = \myvec{-\frac{x_1+x_2}{2}\\0}\ 
+    f = x_1x_2
+\end{align}
+The diagonal is a line starting from the parallelogram's center $\vec{h}$ with a direction vector $\vec{m}$.
+\begin{align}
+    \vec{h} = \myvec{\frac{x_1+x_2}{2} \\ \frac{y_1+y_2}{2} },\ 
+    \vec{m} = \myvec{ x_2-x_1 \\ y_2-y_1 }
 \end{align}
 \end{frame}
 
 \begin{frame}{Theoretical Solution}
-The equations of the diagonals can be found using the vector equation of a line, which is given by $\vec{r}(t) = \vec{p_0} + t\vec{d}$, where $\vec{p_0}$ is a starting point and $\vec{d}$ is the direction vector.\\
-
-The equation of the diagonal $\vec{AC}$, passing through $\vec{A}\brak{2, 1}$ and $\vec{C}\brak{3, 5}$, is:
+First, we evaluate the term $\vec{V}\vec{h} + \vec{u}$:
+\vspace{0.2cm}
 \begin{align}
-    \text{The starting point vector is } \vec{p_0} &= \vec{A} = \myvec{2\\1} \\
-    \text{The direction vector is } \vec{d} &= \vec{C} - \vec{A} = \myvec{3\\5} - \myvec{2\\1} = \myvec{1\\4} \\
-    \text{The vector equation is } \myvec{x\\y} &= \myvec{2\\1} + t\myvec{1\\4} \\
+    \vec{V}\vec{h} + \vec{u} = \myvec{ 1 & 0 \\ 0 & 0 } \myvec{ \frac{x_1+x_2}{2} \\ \frac{y_1+y_2}{2} } + \myvec{ -\frac{x_1+x_2}{2} \\ 0 } = \myvec{\frac{x_1+x_2}{2} \\ 0 } - \myvec{\frac{x_1+x_2}{2} \\ 0 } = \vec{0}
+\end{align}
+Since $\vec{V}\vec{h} + \vec{u} = \vec{0}$, the formula for $\kappa$ simplifies dramatically:
+\vspace{0.2cm}
+\noindent
+\begin{align}
+    \kappa_{1,2} = \frac{\pm \sqrt{-(\vec{m}^{\top} \myvec{V} \vec{m}) g(\vec{h})}}{\vec{m}^{\top} \myvec{V} \vec{m}}
 \end{align}
 \end{frame}
 \begin{frame}{Theoretical Solution}
+Next, we evaluate the remaining terms in the general case:
 \begin{align}
- \text{From this, we get } x = 2 + t &\implies t = x-2 \\
-    \text{And } y = 1 + 4t \\
-    \text{Substituting for t: } y &= 1 + 4\brak{x-2} \\
-    y &= 1 + 4x - 8 \\
-    y &= 4x - 7
+    \vec{m}^{\top} \myvec{V} \vec{m} &= (x_2-x_1)^2 \\
+    g(\vec{h}) &= \brak{\frac{x_1+x_2}{2}}^2 - (x_1+x_2)\brak{\frac{x_1+x_2}{2}} + x_1x_2 = -\frac{(x_2-x_1)^2}{4}
 \end{align}
-The equation of the diagonal $\vec{BD}$, passing through $\vec{B}\brak{3, 1}$ and $\vec{D}\brak{2, 5}$, is:
+Substituting these back into the simplified formula for $\kappa$:
+\vspace{0.2cm}
+\noindent
 \begin{align}
-    \text{The starting point vector is } \vec{p_0} &= \vec{B} = \myvec{3\\1} \\
-    \text{The direction vector is } \vec{d} &= \vec{D} - \vec{B} = \myvec{2\\5} - \myvec{3\\1} = \myvec{-1\\4} \\
-    
+    \kappa_{1,2} = \frac{\pm \sqrt{-(x_2-x_1)^2 \brak{-\frac{(x_2-x_1)^2}{4}}}}{(x_2-x_1)^2} = \frac{\pm \sqrt{\frac{(x_2-x_1)^4}{4}}}{(x_2-x_1)^2} = \frac{\pm \frac{(x_2-x_1)^2}{2}}{(x_2-x_1)^2} = \pm \frac{1}{2}
 \end{align}
+This shows that the vertices are located at $\kappa = \pm 1/2$ from the center along the direction vector $\vec{m}$.
 \end{frame}
 \begin{frame}{Theoretical Solution}
-\begin{align}
-    \text{The vector equation is } \myvec{x\\y} &= \myvec{3\\1} + t\myvec{-1\\4} \\
-    \text{From this, we get } x = 3 - t &\implies t = 3-x \\
-    \text{And } y = 1 + 4t \\
-    \text{Substituting for t: } y &= 1 + 4\brak{3-x} \\
-    y &= 1 + 12 - 4x \\
-    4x + y &= 13\\
-\end{align}
-    Therefore the equations of both the diagonals are:
-    \begin{align}
-    y &= 4x - 7 \\
-    4x + y &= 13
-    \end{align}
-    Hence the answer is option 2.
+\textbf{Applying to the specific problem:} \\
+From $x^2 - 5x + 6 = 0$, we have $x_1=2, x_2=3$. \\
+From $y^2 - 6y + 5 = 0$, we have $y_1=1, y_2=5$.
 
+\noindent
+The center point $\vec{h}$ and diagonal direction vectors $\vec{m}_1, \vec{m}_2$ are:
+\vspace{0.2cm}
+\begin{align}
+    \vec{h} = \myvec{ 2.5 \\ 3 }, \ 
+    \vec{m}_1 = \myvec{ 3-2 \\ 5-1 } = \myvec{ 1 \\ 4 }, \ 
+    \vec{m}_2 = \myvec{ 2-3 \\ 5-1 } = \myvec{ -1 \\ 4 }
+\end{align}
+The vertices are $\vec{v} = \vec{h} \pm \frac{1}{2}\vec{m}$.
+
+\noindent
+\textbf{Diagonal 1 (using $\vec{m}_1$):}
+\vspace{0.2cm}
+\begin{align*}
+    \vec{v}_C = \myvec{ 2.5 \\ 3 } + \frac{1}{2}\myvec{ 1 \\ 4 } = \myvec{ 3 \\ 5 } \  \text{and} \ 
+    \vec{v}_A = \myvec{ 2.5 \\ 3 } - \frac{1}{2}\myvec{ 1 \\ 4 } = \myvec{ 2 \\ 1 }
+\end{align*}
+The line passing through $\vec{A}\brak{2,1}$ and $\vec{C}\brak{3,5}$ is $y-1 = 4\brak{x-2} \implies \boldsymbol{y = 4x - 7}$.
+\end{frame}
+\begin{frame}{Theoretical Solution}
+    \textbf{Diagonal 2 (using $\vec{m}_2$):}
+\begin{align*}
+    \vec{v}_D = \myvec{ 2.5 \\ 3} + \frac{1}{2}\myvec{ -1 \\ 4 } = \myvec{ 2 \\ 5 } \  \text{and} \ 
+    \vec{v}_B = \myvec{ 2.5 \\ 3 } - \frac{1}{2}\myvec{-1 \\ 4 } = \myvec{ 3 \\ 1 }
+\end{align*}
+The line passing through $\vec{B}\brak{3,1}$ and $\vec{D}\brak{2,5}$ is $y-1 = -4\brak{x-3} \implies \boldsymbol{4x + y = 13}$.
 \end{frame}
 \begin{frame}[fragile]
     \frametitle{C Code (1) - Function to store the points }
