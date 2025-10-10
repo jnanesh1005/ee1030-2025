@@ -1,0 +1,238 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{txfonts}
+\usepackage{tkz-euclide}
+\usepackage{listings}
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{gvv}
+\usepackage{lmodern}
+\usepackage{circuitikz}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{multicol}
+
+\setbeamertemplate{page number in head/foot}[totalframenumber]
+
+\usepackage{tcolorbox}
+\tcbuselibrary{minted,breakable,xparse,skins}
+
+
+
+\definecolor{bg}{gray}{0.95}
+\DeclareTCBListing{mintedbox}{O{}m!O{}}{%
+  breakable=true,
+  listing engine=minted,
+  listing only,
+  minted language=#2,
+  minted style=default,
+  minted options={%
+    linenos,
+    gobble=0,
+    breaklines=true,
+    breakafter=,,
+    fontsize=\small,
+    numbersep=8pt,
+    #1},
+  boxsep=0pt,
+  left skip=0pt,
+  right skip=0pt,
+  left=25pt,
+  right=0pt,
+  top=3pt,
+  bottom=3pt,
+  arc=5pt,
+  leftrule=0pt,
+  rightrule=0pt,
+  bottomrule=2pt,
+  toprule=2pt,
+  colback=bg,
+  colframe=orange!70,
+  enhanced,
+  overlay={%
+    \begin{tcbclipinterior}
+    \fill[orange!20!white] (frame.south west) rectangle ([xshift=20pt]frame.north west);
+    \end{tcbclipinterior}},
+  #3,
+}
+\lstset{
+    language=C,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    stringstyle=\color{orange},
+    commentstyle=\color{green!60!black},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    breaklines=true,
+    showstringspaces=false,
+}
+%------------------------------------------------------------
+%This block of code defines the information to appear in the
+%Title page
+\title %optional
+{5.4.24}
+\date{October 10,2025}
+
+
+\author 
+{Jnanesh Sathisha karmar - EE25BTECH11029}
+
+
+
+\begin{document}
+
+
+
+\frame{\titlepage}
+\begin{frame}{Question:}
+Using elementary transformations,find the inverse of each of the following matrices\\
+$\vec{A} = \myvec{2 & 1 \\ 4 & 2}$ 
+\end{frame}
+
+\begin{frame}{Theoretical Solution}
+To find the inverse of a matrix $\vec{A}$, we use the Gauss-Jordan elimination method. We begin by creating an augmented matrix by placing the identity matrix $\vec{I}$ to the right of matrix $\vec{A}$, forming $\brak{\vec{A}|\vec{I}}$.\\
+The augmented matrix for $\vec{A} = \myvec{2 & 1 \\ 4 & 2}$ is:
+\begin{align}
+ \augvec{1}{1}{\vec{A}&\vec{I}} =
+    \augvec{2}{2}{
+        2 & 1 & 1 & 0 \\
+        4 & 2 & 0 & 1}
+\end{align}
+\end{frame}
+\begin{frame}{Theoretical Solution}
+The goal is to use elementary row operations to transform the left side of the augmented matrix into the identity matrix. The right side will then become the inverse, $\vec{A}^{-1}$. We perform the operation $R_2 \to R_2 - 2R_1$:
+\begin{align}
+    \augvec{2}{2}{
+        2 & 1 & 1 & 0 \\
+        4 - 2(2) & 2 - 2(1) & 0 - 2(1) & 1 - 2(0)}
+\end{align}
+After performing the operation, the matrix becomes:
+\begin{align}
+    \augvec{2}{2}{
+        2 & 1 & 1 & 0 \\
+        0 & 0 & -2 & 1}
+\end{align}
+
+Because a row of zeros has appeared on the left-hand side, it is impossible to continue the process to form the identity matrix. This indicates that the original matrix $\vec{A}$ is singular (its determinant is zero). Therefore, the inverse of the matrix does not exist.
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{C Code }
+
+    \begin{lstlisting}
+#include <stdio.h>
+#include <math.h>
+#define MAX 10
+void print_matrix(int n,double mat[MAX][MAX]){
+    for(int i=0;i<n;i++){
+        for (int j=0;j<n;j++){
+            printf("%lf",mat[i][j]);
+        }
+        printf("\n");
+    }
+}
+int inverse_matrix(int n,double mat[MAX][MAX],double inverse[MAX][MAX]){
+    double augvec[MAX][MAX*2];
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            augvec[i][j]=mat[i][j];
+        }
+
+
+
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{C Code }
+    \begin{lstlisting}
+        for(int j=0;j<n;j++){
+            augvec[i][j+n]=(i==j)?1:0;
+        }
+    }
+    for(int i=0;i<n;i++){
+        double pivot=augvec[i][i];
+        if(pivot==0){
+int max_row = i;
+for (int k = i + 1; k < n; k++) {
+    if (fabs(augvec[k][i]) > fabs(augvec[max_row][i])) {
+        max_row = k;
+    }
+}
+if (max_row != i) {
+    for (int j = 0; j < 2 * n; j++) {
+        double temp = augvec[i][j];
+        augvec[i][j] = augvec[max_row][j];
+        augvec[max_row][j] = temp;
+    }
+}
+        }
+        pivot=augvec[i][i];
+        
+        if(pivot==0)return 0;
+        for(int j=0;j<2*n;j++){
+            augvec[i][j]/=pivot;
+        }
+
+    return 1;
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{C Code }
+    \begin{lstlisting}
+        for (int k=0;k<n;k++){
+            if(k!=i){
+                double factor=augvec[k][i];
+                for(int j=0;j<2*n;j++){
+                    augvec[k][j]-=factor*augvec[i][j];
+                }
+            }
+        }
+        
+    }
+    for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                inverse[i][j]=augvec[i][j+n];
+            }
+        }
+   }
+
+
+\end{lstlisting}
+\end{frame}
+\begin{frame}[fragile]
+    \frametitle{C Code }
+    \begin{lstlisting}
+int main(){
+    int n;
+    printf("enter the size of the matrix=");
+    scanf("%d",&n);
+    printf("\n");
+    double mat[MAX][MAX];
+    for (int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            scanf("%lf",&mat[i][j]);
+        }
+    }
+    double inv[MAX][MAX];
+    
+    inverse_matrix(n,mat,inv);
+    if(inverse_matrix(n,mat,inv)==1){
+        print_matrix(n,inv);}
+    if(inverse_matrix(n,mat,inv)==0){
+        printf("The matrix is singular");
+    }
+}
+
+\end{lstlisting}
+\end{frame}
+
+
+
+\end{document}

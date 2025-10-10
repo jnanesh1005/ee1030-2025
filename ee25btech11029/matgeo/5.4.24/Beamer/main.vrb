@@ -1,0 +1,24 @@
+\frametitle{C Code }
+    \begin{lstlisting}
+int main(){
+    int n;
+    printf("enter the size of the matrix=");
+    scanf("%d",&n);
+    printf("\n");
+    double mat[MAX][MAX];
+    for (int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            scanf("%lf",&mat[i][j]);
+        }
+    }
+    double inv[MAX][MAX];
+
+    inverse_matrix(n,mat,inv);
+    if(inverse_matrix(n,mat,inv)==1){
+        print_matrix(n,inv);}
+    if(inverse_matrix(n,mat,inv)==0){
+        printf("The matrix is singular");
+    }
+}
+
+\end{lstlisting}
