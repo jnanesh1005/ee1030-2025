@@ -1,0 +1,126 @@
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm]{geometry}
+%\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}     % Set the distance between the header box and the top of the text
+
+
+%\usepackage[a5paper, top=10mm, bottom=10mm, left=10mm, right=10mm]{geometry}
+
+%
+\setlength{\intextsep}{10pt} % Space between text and floats
+
+\makeindex
+
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{xparse}
+\usepackage{gvv}
+%\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                               
+\usepackage{lscape}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{float}
+\usepackage{ar}
+\usepackage[version=4]{mhchem}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Rorollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Sefinition}
+\newcommand{\QEQP}{\begin{eqnarray}}
+\newcommand{\EEQP}{\end{eqnarray}}
+
+\theoremstyle{remark}
+
+
+\begin{document}
+\setlength{\abovedisplayskip}{0pt}
+\setlength{\belowdisplayskip}{0pt}
+\setlength{\abovedisplayshortskip}{0pt}
+\setlength{\belowdisplayshortskip}{0pt}
+\bibliographystyle{IEEEtran}
+\onecolumn
+
+\title{5.8.27}
+\author{Jnanesh Sathisha Karmar- EE25BTECH11029}
+\maketitle
+
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+\noindent\textbf{Question:}
+
+\noindent The students of a class are made to stand in rows. If 3 students are extra in a row, there would be 1 row less. If 3 students are less in a row, there would be 2 rows more. Find the number of students in the class using matrices.\\
+
+\noindent\textbf{Solution:} To find the total number of students, we first define our variables and set up a system of linear equations. Let $x$ be the number of rows and $y$ be the number of students per row. The total number of students is $xy$.
+
+From the problem statement, we derive two equations:
+\begin{align*}
+    \brak{x-1}\brak{y+3} &= xy \implies 3x - y = 3 \\
+    \brak{x+2}\brak{y-3} &= xy \implies -3x + 2y = 6
+\end{align*}
+
+We can solve this system using an augmented matrix and Gaussian elimination. We begin by creating an augmented matrix $\augvec{1}{1}{A&B}$ for this system.
+
+The augmented matrix for this system is:
+\begin{align}
+\augvec{1}{1}{A&B} =  \augvec{2}{1}{ 3 & -1 & 3 \\ -3 & 2 & 6 } 
+\end{align}
+
+
+The goal is to use elementary row operations to transform the left side of the augmented matrix into row-echelon form. We perform the operation $R_2 \to R_2 + R_1$:
+\begin{align}
+\augvec{2}{1}{ 3 & -1 & 3 \\ -3+3 & 2+(-1) & 6+3 }
+\end{align}
+
+After performing the operation, the matrix becomes:
+\begin{align}
+\augvec{2}{1}{ 3 & -1 & 3 \\ 0 & 1 & 9} 
+\end{align}
+
+From this row-echelon form, we can use back-substitution. The second row gives us the equation $0x + 1y = 9$, which means $y=9$.
+
+Substituting $y=9$ into the first row's equation, $3x - y = 3$:
+\begin{align*}
+    3x - 9 &= 3 \\
+    3x &= 12 \\
+    x &= 4
+\end{align*}
+
+We have found there are $x=4$ rows and $y=9$ students per row.
+
+The total number of students is $x \times y = 4 \times 9 = 36$.
+
+\end{document}

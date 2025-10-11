@@ -1,0 +1,198 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{txfonts}
+\usepackage{tkz-euclide}
+\usepackage{listings}
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{gvv}
+\usepackage{lmodern}
+\usepackage{circuitikz}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{multicol}
+
+\setbeamertemplate{page number in head/foot}[totalframenumber]
+
+\usepackage{tcolorbox}
+\tcbuselibrary{minted,breakable,xparse,skins}
+
+
+
+\definecolor{bg}{gray}{0.95}
+\DeclareTCBListing{mintedbox}{O{}m!O{}}{%
+  breakable=true,
+  listing engine=minted,
+  listing only,
+  minted language=#2,
+  minted style=default,
+  minted options={%
+    linenos,
+    gobble=0,
+    breaklines=true,
+    breakafter=,,
+    fontsize=\small,
+    numbersep=8pt,
+    #1},
+  boxsep=0pt,
+  left skip=0pt,
+  right skip=0pt,
+  left=25pt,
+  right=0pt,
+  top=3pt,
+  bottom=3pt,
+  arc=5pt,
+  leftrule=0pt,
+  rightrule=0pt,
+  bottomrule=2pt,
+  toprule=2pt,
+  colback=bg,
+  colframe=orange!70,
+  enhanced,
+  overlay={%
+    \begin{tcbclipinterior}
+    \fill[orange!20!white] (frame.south west) rectangle ([xshift=20pt]frame.north west);
+    \end{tcbclipinterior}},
+  #3,
+}
+\lstset{
+    language=C,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    stringstyle=\color{orange},
+    commentstyle=\color{green!60!black},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    breaklines=true,
+    showstringspaces=false,
+}
+%------------------------------------------------------------
+%This block of code defines the information to appear in the
+%Title page
+\title %optional
+{5.8.27}
+\date{October 11,2025}
+
+
+\author 
+{Jnanesh Sathisha karmar - EE25BTECH11029}
+
+
+
+\begin{document}
+
+
+
+\frame{\titlepage}
+\begin{frame}{Question:}
+
+
+\noindent The students of a class are made to stand in rows. If 3 students are extra in a row, there would be 1 row less. If 3 students are less in a row, there would be 2 rows more. Find the number of students in the class using matrices.\\
+\end{frame}
+
+\begin{frame}{Theoretical Solution}
+To find the total number of students, we first define our variables and set up a system of linear equations. Let $x$ be the number of rows and $y$ be the number of students per row. The total number of students is $xy$.
+
+From the problem statement, we derive two equations:
+\begin{align*}
+    \brak{x-1}\brak{y+3} &= xy \implies 3x - y = 3 \\
+    \brak{x+2}\brak{y-3} &= xy \implies -3x + 2y = 6
+\end{align*}
+
+We can solve this system using an augmented matrix and Gaussian elimination. We begin by creating an augmented matrix $\augvec{1}{1}{A&B}$ for this system.
+
+The augmented matrix for this system is:
+\begin{align}
+\augvec{1}{1}{A&B} =  \augvec{2}{1}{ 3 & -1 & 3 \\ -3 & 2 & 6 } 
+\end{align}
+\end{frame}
+\begin{frame}{Theoretical Solution}
+The goal is to use elementary row operations to transform the left side of the augmented matrix into row-echelon form. We perform the operation $R_2 \to R_2 + R_1$:
+\begin{align}
+\augvec{2}{1}{ 3 & -1 & 3 \\ -3+3 & 2+(-1) & 6+3 }
+\end{align}
+
+After performing the operation, the matrix becomes:
+\begin{align}
+\augvec{2}{1}{ 3 & -1 & 3 \\ 0 & 1 & 9} 
+\end{align}
+
+From this row-echelon form, we can use back-substitution. The second row gives us the equation $0x + 1y = 9$, which means $y=9$.
+Substituting $y=9$ into the first row's equation, $3x - y = 3$:
+\begin{align*}
+    3x - 9 &= 3 \\
+    3x &= 12 \\
+    x &= 4
+\end{align*}
+
+
+\end{frame}
+\begin{frame}{Theoretical Solution}
+We have found there are $x=4$ rows and $y=9$ students per row.
+
+The total number of students is $x \times y = 4 \times 9 = 36$.
+
+    
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{C Code }
+
+    \begin{lstlisting}
+#include <stdio.h>
+
+void print_matrix(float matrix[2][3]) {
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("%8.2f ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    float matrix[2][3] = {
+        {3.0, -1.0, 3.0},
+        {-3.0, 2.0, 6.0}
+    };
+
+    printf("Initial Augmented Matrix:\n");
+    print_matrix(matrix);
+
+
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{C Code }
+    \begin{lstlisting}
+    
+    for (int j = 0; j < 3; j++) {
+        matrix[1][j] = matrix[1][j] + matrix[0][j];
+    }
+    printf("\nMatrix after Row Operation (R2 -> R2 + R1):\n");
+    print_matrix(matrix);
+    float y = matrix[1][2] / matrix[1][1];
+    float x = (matrix[0][2] - (matrix[0][1] * y)) / matrix[0][0];
+    int total_students = (int)(x * y);
+
+    printf("\n--- Solution ---\n");
+    printf("Number of rows (x): %.0f\n", x);
+    printf("Number of students per row (y): %.0f\n", y);
+    printf("Total number of students in the class: %d\n", total_students);
+
+    return 0;
+}
+    return 1;
+\end{lstlisting}
+\end{frame}
+
+
+
+
+\end{document}
